@@ -42,12 +42,9 @@ def getposition(img, minval=0.1):
     screenshot(hwnd)
     template = cv2.imread('screenshot.png', 0)
     h, w = img.shape[:2]
-    tt1= time.time()
     res = cv2.matchTemplate(template, img, cv2.TM_SQDIFF_NORMED)
     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
-    tt = time.time()-tt1
-    print(tt)
-    # print(min_val)
+    print(min_val)
 
 
 
